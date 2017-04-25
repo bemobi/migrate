@@ -47,7 +47,7 @@ func main() {
 			os.Exit(1)
 		}
 
-		migrationFile, err := migrate.Create(*url, *migrationsPath, name)
+		migrationFile, err := migration.Create(*url, *migrationsPath, name)
 		if err != nil {
 			fmt.Println(err)
 			os.Exit(1)
@@ -67,7 +67,7 @@ func main() {
 		}
 		timerStart = time.Now()
 		pipe := pipep.New()
-		go migrate.Migrate(pipe, *url, *migrationsPath, relativeNInt)
+		go migration.Migrate(pipe, *url, *migrationsPath, relativeNInt)
 		ok := writePipe(pipe)
 		printTimer()
 		if !ok {
@@ -83,7 +83,7 @@ func main() {
 			os.Exit(1)
 		}
 
-		currentVersion, err := migrate.Version(*url, *migrationsPath)
+		currentVersion, err := migration.Version(*url, *migrationsPath)
 		if err != nil {
 			fmt.Println(err)
 			os.Exit(1)
@@ -93,7 +93,7 @@ func main() {
 
 		timerStart = time.Now()
 		pipe := pipep.New()
-		go migrate.Migrate(pipe, *url, *migrationsPath, relativeNInt)
+		go migration.Migrate(pipe, *url, *migrationsPath, relativeNInt)
 		ok := writePipe(pipe)
 		printTimer()
 		if !ok {
@@ -104,7 +104,7 @@ func main() {
 		verifyMigrationsPath(*migrationsPath)
 		timerStart = time.Now()
 		pipe := pipep.New()
-		go migrate.Up(pipe, *url, *migrationsPath)
+		go migration.Up(pipe, *url, *migrationsPath)
 		ok := writePipe(pipe)
 		printTimer()
 		if !ok {
@@ -115,7 +115,7 @@ func main() {
 		verifyMigrationsPath(*migrationsPath)
 		timerStart = time.Now()
 		pipe := pipep.New()
-		go migrate.Down(pipe, *url, *migrationsPath)
+		go migration.Down(pipe, *url, *migrationsPath)
 		ok := writePipe(pipe)
 		printTimer()
 		if !ok {
@@ -126,7 +126,7 @@ func main() {
 		verifyMigrationsPath(*migrationsPath)
 		timerStart = time.Now()
 		pipe := pipep.New()
-		go migrate.Redo(pipe, *url, *migrationsPath)
+		go migration.Redo(pipe, *url, *migrationsPath)
 		ok := writePipe(pipe)
 		printTimer()
 		if !ok {
@@ -137,7 +137,7 @@ func main() {
 		verifyMigrationsPath(*migrationsPath)
 		timerStart = time.Now()
 		pipe := pipep.New()
-		go migrate.Reset(pipe, *url, *migrationsPath)
+		go migration.Reset(pipe, *url, *migrationsPath)
 		ok := writePipe(pipe)
 		printTimer()
 		if !ok {
@@ -146,7 +146,7 @@ func main() {
 
 	case "version":
 		verifyMigrationsPath(*migrationsPath)
-		version, err := migrate.Version(*url, *migrationsPath)
+		version, err := migration.Version(*url, *migrationsPath)
 		if err != nil {
 			fmt.Println(err)
 			os.Exit(1)

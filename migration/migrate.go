@@ -1,6 +1,6 @@
 // Package migrate is imported by other Go code.
 // It is the entry point to all migration functions.
-package migrate
+package migration
 
 import (
 	"fmt"
