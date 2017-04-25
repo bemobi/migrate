@@ -1,3 +1,6 @@
+Copyright for portions of project bemobi/migrate are held by [Matthias Kadenbach, 2014] as part of project mattes/migrate.
+All other copyright for project bemobi/migrate are held by [Bemobi, 2017].
+
 ---
 
 # migrate
