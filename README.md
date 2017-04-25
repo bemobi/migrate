@@ -21,7 +21,7 @@ __Features__
 * Super easy to implement [Driver interface](http://godoc.org/github.com/bemobi/migrate/driver#Driver).
 * Gracefully quit running migrations on ``^C``.
 * No magic search paths routines, no hard-coded config files.
-* CLI is build on top of the ``migrate package``.
+* CLI is build on top of the ``migration package``.
 
 
 ## Available Drivers
@@ -83,15 +83,15 @@ import "github.com/bemobi/migrate/migration"
 import _ "github.com/bemobi/migrate/driver/postgres"
 
 // use synchronous versions of migration functions ...
-allErrors, ok := migrate.UpSync("driver://url", "./path")
+allErrors, ok := migration.UpSync("driver://url", "./path")
 if !ok {
   fmt.Println("Oh no ...")
   // do sth with allErrors slice
 }
 
 // use the asynchronous version of migration functions ...
-pipe := migrate.NewPipe()
-go migrate.Up(pipe, "driver://url", "./path")
+pipe := migration.NewPipe()
+go migration.Up(pipe, "driver://url", "./path")
 // pipe is basically just a channel
 // write your own channel listener. see writePipe() in main.go as an example.
 ```
