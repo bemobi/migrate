@@ -8,15 +8,12 @@ import (
 
 	// Ensure imports for each driver we wish to test
 
-	_ "github.com/mattes/migrate/driver/postgres"
-	_ "github.com/mattes/migrate/driver/ql"
-	_ "github.com/mattes/migrate/driver/sqlite3"
+	_ "github.com/bemobi/migrate/driver/postgres"
 )
 
 // Add Driver URLs here to test basic Up, Down, .. functions.
 var driverURLs = []string{
 	"postgres://postgres@" + os.Getenv("POSTGRES_PORT_5432_TCP_ADDR") + ":" + os.Getenv("POSTGRES_PORT_5432_TCP_PORT") + "/template1?sslmode=disable",
-	"ql+file://./test.db",
 }
 
 func tearDown(driverURL, tmpdir string) {

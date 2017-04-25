@@ -7,10 +7,10 @@ import (
 	"fmt"
 	"strconv"
 
+	"github.com/bemobi/migrate/driver"
+	"github.com/bemobi/migrate/file"
+	"github.com/bemobi/migrate/migration/direction"
 	"github.com/lib/pq"
-	"github.com/mattes/migrate/driver"
-	"github.com/mattes/migrate/file"
-	"github.com/mattes/migrate/migrate/direction"
 )
 
 type Driver struct {

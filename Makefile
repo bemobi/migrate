@@ -1,9 +1,8 @@
 TESTFLAGS?=
-IMAGE=mattes/migrate
 DCR=docker-compose run --rm
 GOTEST=go test $(TESTFLAGS) `go list  ./... | grep -v "/vendor/"`
 
-.PHONY: clean test build release docker-build docker-push run
+.PHONY: clean test build release run
 all: release
 
 clean:
@@ -19,12 +18,6 @@ go-test: fmt
 	@$(GOTEST)
 
 build:
-	$(DCR) go-build
+	@go build -o migrate
 
-release: test build docker-build docker-push
-
-docker-build:
-	docker build --rm -t $(IMAGE) .
-
-docker-push:
-	docker push $(IMAGE)
+release: test build 

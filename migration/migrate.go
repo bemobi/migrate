@@ -12,10 +12,10 @@ import (
 	"strings"
 	"time"
 
-	"github.com/mattes/migrate/driver"
-	"github.com/mattes/migrate/file"
-	"github.com/mattes/migrate/migrate/direction"
-	pipep "github.com/mattes/migrate/pipe"
+	"github.com/bemobi/migrate/driver"
+	"github.com/bemobi/migrate/file"
+	"github.com/bemobi/migrate/migration/direction"
+	pipep "github.com/bemobi/migrate/pipe"
 )
 
 // Up applies all available migrations
