@@ -12,7 +12,7 @@ A migration helper written in Go. Use it in your existing Golang code
 or run commands via the CLI. 
 
 ```
-GoCode   import github.com/bemobi/migrate/migrate
+GoCode   import github.com/bemobi/migrate/migration
 CLI      go get -u github.com/bemobi/migrate
 ```
 
@@ -74,10 +74,10 @@ migrate -url driver://url -path ./migrations goto v
 
 ## Usage in Go
 
-See GoDoc here: http://godoc.org/github.com/bemobi/migrate/migrate
+See GoDoc here: http://godoc.org/github.com/bemobi/migrate/migration
 
 ```go
-import "github.com/bemobi/migrate/migrate"
+import "github.com/bemobi/migrate/migration"
 
 // Import any required drivers so that they are registered and available
 import _ "github.com/bemobi/migrate/driver/postgres"

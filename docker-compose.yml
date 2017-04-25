@@ -5,7 +5,7 @@ go: &go
     - $GOPATH:/go
 go-test:
   <<: *go
-  command: sh -c 'go get -t -v ./... && go test -v ./...'
+  command: sh -c 'go test -v ./...'
   links:
     - postgres
 postgres:

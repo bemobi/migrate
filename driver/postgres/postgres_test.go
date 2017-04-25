@@ -6,12 +6,12 @@ import (
 	"testing"
 
 	"github.com/bemobi/migrate/file"
-	"github.com/bemobi/migrate/migrate/direction"
+	"github.com/bemobi/migrate/migration/direction"
 	pipep "github.com/bemobi/migrate/pipe"
 )
 
 // TestMigrate runs some additional tests on Migrate().
-// Basic testing is already done in migrate/migrate_test.go
+// Basic testing is already done in migrate/migration_test.go
 func TestMigrate(t *testing.T) {
 	if testing.Short() {
 		t.Skip("skipping test in short mode.")

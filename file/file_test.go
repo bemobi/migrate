@@ -6,7 +6,7 @@ import (
 	"path"
 	"testing"
 
-	"github.com/bemobi/migrate/migrate/direction"
+	"github.com/bemobi/migrate/migration/direction"
 )
 
 func TestParseFilenameSchema(t *testing.T) {
